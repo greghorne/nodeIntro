@@ -11,12 +11,11 @@ app.get('/lname', function (req, res) {
 });
 
 app.get('/client', function (req, res) {
-    var params = req.query
-    console.log(params);
-    console.log(params.fname);
-    console.log(params.lname);
-    // console.log(lname);
-    res.end("end...")
+    // var params = req.query
+    // console.log(params);
+    console.log(req.query.fname);
+    console.log(req.query.lname);
+    res.end()
 });
 
 app.get('/', function (req, res) {
