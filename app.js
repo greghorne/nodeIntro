@@ -11,15 +11,14 @@ app.get('/lname', function (req, res) {
 });
 
 app.get('/client', function (req, res) {
-    // var params = req.query
-    // console.log(params);
     console.log(req.query.fname);
     console.log(req.query.lname);
-    res.end()
+    res.end(req.query.lname + ", " + req.query.fname)
 });
 
 app.get('/', function (req, res) {
-    res.end('app root')
+    res.statusCode = 200;
+    res.end('app root');
 });
 
 var server = app.listen(3000, function () {
