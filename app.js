@@ -1,22 +1,32 @@
 var express = require('express');
 var app     = express();
-var fs      = require("fs");
+
 
 app.get('/fname', function (req, res) {
     res.end('greg')
-})
+});
 
 app.get('/lname', function (req, res) {
     res.end('horne')
-})
+});
+
+app.get('/client', function (req, res) {
+    var params = req.query
+    console.log(params);
+    console.log(params.fname);
+    console.log(params.lname);
+    // console.log(lname);
+    res.end("end...")
+});
 
 app.get('/', function (req, res) {
     res.end('app root')
-})
+});
 
 var server = app.listen(3000, function () {
-//    var host = server.address().address
+
    var env = process.env.APP_NAME;
+//    var host = server.address().address
    var host = '0.0.0.0';
    var port = server.address().port
    console.log("Example app listening at http://%s:%s", host, port)
